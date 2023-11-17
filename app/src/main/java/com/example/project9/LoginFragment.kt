@@ -16,6 +16,10 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginFragment : Fragment() {
+    /**
+     * A simple {@link Fragment} subclass that represents the login screen of the application.
+     * It allows users to log in with their email and password using Firebase authentication.
+     */
     private val TAG = "LoginFragment"
 
     private var _binding: FragmentLoginBinding? = null
@@ -24,6 +28,15 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        /**
+         * Called to have the fragment instantiate its user interface view.
+         *
+         * @param inflater           The LayoutInflater object that can be used to inflate views.
+         * @param container          If non-null, this is the parent view that the fragment's UI should be attached to.
+         * @param savedInstanceState If non-null, this fragment is being re-constructed from a previous saved state.
+         * @return The created view or null.
+         */
+
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -33,6 +46,10 @@ class LoginFragment : Fragment() {
         }
         val btnLogin = view.findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
+            /**
+             * Handles the click event of the login button.
+             * Attempts to authenticate the user with the provided email and password using Firebase authentication.
+             */
             btnLogin.isEnabled = false
             val etEmail = binding.etEmail
             val etPassword = binding.etPassword
